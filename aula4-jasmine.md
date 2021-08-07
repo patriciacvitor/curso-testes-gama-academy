@@ -59,13 +59,56 @@ Baixe a versão LTS mais recente no site https://nodejs.org/en/download/ e insta
         $   node teste.js
         O node do seu arquivo será executado e a mensagem "Oi" será exibida no seu cmd.
 
-.
-.
-.
-.
-.
-.
-.
+- No cmd rodamos o npm start:
+$   npm start
+Isso vai levantar a aplicação na porta 3000, como indicado no arquivo www.js contido na pasta bin:
+    var port = normalizePort(process.env.PORT || '3000');
+
+- No browser digite: localhost:3000
+
+- Se quiser você pode mudar o título que aparece na página no arquivo routes/index.js na linha:
+    res.render('index', { title: 'Express' });
+    - Onde está escrito " 'Express' ", coloque seu nome, por exemplo.
+    - No cmd digite o comando npm start novamente para reiniciar o servidor (o nodemon faria o reload automaticamente).
+
+- Temos também a rota users para obter resposta. No browser digite: localhost:3000/users
+    - Essa rota responde "respond with a resource" de acordo com a linha de código:
+    res.send('respond with a resource');
+
+-----------------------------------------------------------------------------------------------------
+
+Nessa aula vamos fazer uma classe mockada (existe um conceito chamado Mock). Você mocka um dado que vai retornar do banco de dados para poder fazer os seus testes.
+
+- No VS Code crie a pasta models na raiz da pasta do projeto.
+
+- No cmd:
+    - Digite Ctrl + C para parar a execução do node se ainda não tiver feito isso.
+
+    - Instale a suíte de testes Jasmine:
+        - https://jasmine.github.io/setup/nodejs.html
+        - $   npm install --save-dev jasmine
+    - Verifique se no arquivo package.json está instalado o Jasmine em "devDependencies".
+    - Verifique se está instalado com o comando $   jasmine init (ele inicializa um projeto criando o diretório spec e um arquivo JSON com a configuração).
+    - Se der erro, é porque não está instalado globalmente. Você pode:
+        - Instalar globalmente usando -g:
+        $   npm install -g --save-dev jasmine
+        - Ou rodá-lo diretamente do diretório onde está instalado com:
+        $   ./node_modules/jasmine/bin/jasmine.js init
+        ou
+        $   npx jasmine init
+
+    - Para rodar a aplicação:
+        $   jasmine ci
+        ou
+        $   jasmine
+        - Se estiver instalado apenas localmente rode com:
+        $   ./node_modules/jasmine/bin/jasmine.js
+
+- O arquivo spec/support/jasmine.json lê o diretório chamado spec e, dentro desse diretório, qualquer arquivo que tiver o nome [sS]pec.js vai ser lido, e qualquer helper que tiver extensão JS, ele vai entender que é um helper criado para usar diretamente no spec.
+
+- Crie um novo diretório (pasta) chamado "models" dentro de spec (clique na pasta spec para garantir que não está dentro da pasta support e crie a pasta models).
+
+- Crie um novo arquivo chamado "cliente.spec.js" dentro de spec/models (clique na pasta models para garantir que está nela).
 
 [------------------------------------- EXTRA ------------------------------------------
 

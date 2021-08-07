@@ -11,7 +11,7 @@ Exemplos de problemas de comportamento:
 
 Quem resolvia isso eram pessoas que trabalhavam com teste de qualidade (QA).
 
--------------------------------------- FERRAMENTAS ------------------------------------------------
+-------------------- FERRAMENTAS --------------------
 
 - Selenium:
     - https://www.selenium.dev/
@@ -24,3 +24,15 @@ Com o Selenium já não era preciso ter várias pessoas testando tudo novamente,
     - https://cucumber.io/docs/guides/browser-automation/
     - Trabalha com o Selenium para fazer testes BDD.
 
+- Cypress:
+    - https://www.cypress.io/
+    - No site diz: "Cypress makes setting up, writing, running and debugging tests easy."
+    - Com essa ferramenta é possível, de uma forma simples, fazer o setup da máquina, rodar e fazer tudo funcionar de forma amigável.
+    - Faz os testes de BDD.
+
+- Jest:
+    - https://jestjs.io/pt-BR/
+    - Faz os testes de TDD.
+
+Qual a diferença do Jest para o Jasmine?
+No Jest você tem a opção do watch, então você consegue levantar um servidor enquanto faz os testes e ele vai testando de forma automática.
